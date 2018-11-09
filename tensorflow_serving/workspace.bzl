@@ -1,7 +1,7 @@
 # TensorFlow Serving external dependencies that can be loaded in WORKSPACE
 # files.
 
-load('@org_tensorflow//tensorflow:workspace.bzl', 'tf_workspace')
+#load('@org_tensorflow//tensorflow:workspace.bzl', 'tf_workspace')
 
 def tf_serving_workspace():
   '''All TensorFlow Serving external dependencies.'''
@@ -17,7 +17,7 @@ def tf_serving_workspace():
       strip_prefix = "models-6fc65ee60ac39be0445e5a311b40dc7ccce214d0/research/inception",
   )
 
-  tf_workspace(path_prefix = "", tf_repo_name = "org_tensorflow")
+  #tf_workspace(path_prefix = "", tf_repo_name = "org_tensorflow")
 
   # ===== gRPC dependencies =====
   native.bind(
@@ -45,7 +45,7 @@ def tf_serving_workspace():
       ],
       sha256 = "8e00c38829d6785a2dfb951bb87c6974fa07dfe488aa5b25deec4b8bc0f6a3ab",
       strip_prefix = "rapidjson-1.1.0",
-      build_file = "//third_party/rapidjson.BUILD"
+      build_file = "//tensorflow_serving/third_party/rapidjson.BUILD"
   )
 
   # ===== libevent (libevent.org) dependencies =====
@@ -56,5 +56,5 @@ def tf_serving_workspace():
       ],
       sha256 = "70158101eab7ed44fd9cc34e7f247b3cae91a8e4490745d9d6eb7edc184e4d96",
       strip_prefix = "libevent-release-2.1.8-stable",
-      build_file = "//third_party/libevent.BUILD"
+      build_file = "//tensorflow_serving/third_party/libevent.BUILD"
   )
